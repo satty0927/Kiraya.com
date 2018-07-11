@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>INDEX</title> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body background="homes2.jpg" style="background-size: 100%">
+        
+        
+        <nav id="head" class="navbar bg-primary">
+        	<div id="btn">
+        	<div id="head2"></div>
+        		<div id="primarybtn">
+            <button id="home" class="btn btn-primary btn-lg" href="#">HOME</button>
+            <button id="aboutus" class="btn btn-primary btn-lg">ABOUT US</button>
+            <button id="contactus" type="button" class="btn btn-primary btn-lg">CONTACT US</button></div>
+            <button id="registerbtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">REGISTER</button>
+            <button id="loginbtn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#Login">LOGIN</button>
+          </div>
+          </nav>
+          
+        
+        	<!-- Positional Data Routed data Here -->
+
+
+        
+        
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal view-->
+                  <div class="modal-content" style="border-radius:7px;">
+                    <div class="modal-header" style="background-color:lightblue;opacity:0.8;">
+                     <b><p>Tell us about yourself....</p></b> 
+                      <button type="button" class="close" id="close" data-dismiss="modal" style="float:right">&times;</button> 
+                    </div>
+                    <center>
+                     <div class="modal-body">
+						  <form class="form-horizontal" action="Register.jsp">
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="name">Name:</label>
+						      <div class="col-sm-6">
+						        <input type="text" class="form-control" id="name" name="name">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="pwd">Email:</label>
+						      <div class="col-sm-6">          
+						        <input type="email" class="form-control" id="email" name="email">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="phone">Phone:</label>
+						      <div class="col-sm-6">          
+						        <input type="text" class="form-control" id="phone" name="phone">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="password">Password:</label>
+						      <div class="col-sm-6">          
+						        <input type="password" class="form-control" id="password" name="password">
+						      </div>
+						    </div>
+						    
+						    </div>
+						    <div class="form-group">        
+						      <div class="col-sm-offset-2 col-sm-16">
+						        <button type="submit" class="btn btn-default">REGISTER</button>
+						      </div>
+						    </div>
+						  </form>
+						</div></center>
+                    </div>
+                </div>
+              </div>      
+                    
+        
+        
+        
+        
+            <div class="modal fade" id="Login" role="dialog">
+                <div class="modal-dialog">
+                
+                  <!-- Modal view-->
+                  <div class="modal-content">
+                    <div class="modal-header" style="background-color:lightblue;opacity:0.8;">
+                      <p>Logging in............</p>
+                      <button type="button" class="close" id="close" data-dismiss="modal" style="float:right">&times;</button> 
+                    </div>
+                   <center> <div class="modal-body">
+                         <div class="modal-body">
+						  <form class="form-horizontal" action="Login.jsp">
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="pwd">Email:</label>
+						      <div class="col-sm-6">          
+						        <input type="email" class="form-control" id="email" name="email">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <label class="control-label col-sm-2" for="password">Password:</label>
+						      <div class="col-sm-6">          
+						        <input type="password" class="form-control" id="password" name="password">
+						      </div>
+						    </div>
+						    
+						    </div>
+						    <div class="form-group">        
+						      <div class="col-sm-offset-2 col-sm-16">
+						        <button type="submit" class="btn btn-default">LOGIN</button>
+						      </div>
+						    </div>
+						  </form>
+						</div>
+                    </div></center>
+                  </div>
+                  
+                </div>
+              </div>
+         
+
+         
+        <div id="foot">
+            <footer class="page-footer bg-primary">
+                <div class="container">
+                  <div class="row">
+                      <h5 class="white-text">Our Sponsors</h5>
+                        <a href="#!">Le-Chachu.com</a>
+                        <a class="white-text" href="http://www.silantechnology.com/">Silan Technology</a>
+                        <a class="white-text" href="#!">Palamu Real Estates</a>
+                        <a class="white-text" href="#!">Google</a>
+                  </div>
+                </div>
+                <div class="footer-copyright">
+                  <div class="container">
+                  <!-- &copy --> 2018 Copyright
+                  </div>
+                </div>
+              </footer>
+        </div>
+    </body>
+</html>
