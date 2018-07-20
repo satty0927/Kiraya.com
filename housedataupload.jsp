@@ -6,6 +6,9 @@
     
     <%
     HttpSession locationdata=request.getSession();
+    HttpSession sess=request.getSession(false);
+	String email=(String)sess.getAttribute("email");
+		
     String bhk=request.getParameter("bhk");
     String lat=request.getParameter("lat");
     String lng=request.getParameter("lng");
@@ -20,7 +23,7 @@
    try{
     Class.forName("oracle.jdbc.driver.OracleDriver");
     Connection cn=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
-    PreparedStatement ps=cn.prepareStatement("insert into roomdata values(?,?,?,?,?,?,?,?,?)");
+    PreparedStatement ps=cn.prepareStatement("insert into roomdata values(?,?,?,?,?,?,?,?,?,?)");
     ps.setString(1,country);
 	ps.setString(2,state);
 	ps.setString(3,city);
@@ -30,12 +33,13 @@
 	ps.setString(7,bhk);
 	ps.setInt(8,pay);
 	ps.setString(9,"null");
+	ps.setString(10,email);
 	ps.executeUpdate();
+	cn.close();
 	%><script>
 	alert('Update Successful');
 	</script>
 	<%
-	response.sendRedirect("index2.jsp");
 	
     
     }catch(Exception e){

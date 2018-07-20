@@ -103,7 +103,7 @@ a{
 		width: 45%;
     
       }
-      /* Optional: Makes the sample page fill the window. */
+      
       html, body {
         height: 100%;
         margin: 0;
@@ -126,28 +126,4 @@ a{
 	float:right;
 	width: 50%;
 	
-}
-
-.vertical-menu {
-	float:right;
-    width: 30%;
-    height: 100%;
-    overflow-y: auto;
-}
-
-.vertical-menu .card {
-    background-color: #eee;
-    color: black;
-    display: block;
-    padding: 12px;
-    text-decoration: none;
-}
-
-.vertical-menu .card:hover {
-    background-color: #ccc;
-}
-
-.vertical-menu .card.active {
-    background-color: #4CAF50;
-    color: white;
 }

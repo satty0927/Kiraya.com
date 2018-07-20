@@ -15,7 +15,7 @@
 <div id="form">
 	<center>
 	<h3>Place yourself on the map.......</h3></center>
-	<form action=housedataupload.jsp>
+	<form action="housedataupload.jsp">
 		<fieldset><legend><b>Location</b></legend>
 		<table>
 			<tr><td><label>Country</label></td><td><label><%HttpSession locationdata=request.getSession(); String l1=(String)locationdata.getAttribute("country");  out.print(l1);%></label></td></tr>
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <label>Charges:</label><input type="number" name="price" id ="prices"><label>Per/month</label>>
+    <label>Charges:</label><input type="number" name="price" id ="prices"><label>Per/month</label>
 		
 		<input type="submit" value="UPLOAD">
 	</form>

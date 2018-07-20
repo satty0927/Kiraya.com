@@ -11,7 +11,7 @@
  			String s=(String)sess.getAttribute("email");
  		
  			ResultSet rs=st.executeQuery("select * from registration where email= '" +s+"'");
- 			while(rs.next()){
+ 			if(rs.next()){
  				HttpSession ss=request.getSession();
  				String uname=rs.getString(1);
  				ss.setAttribute("uname", uname);
@@ -41,6 +41,7 @@
         		document.getElementById("addhouse").onclick=function(){addhouse()};
         		document.getElementById("approvedrequests").id="viewrequests";
         		document.getElementById("viewrequests").innerHTML="Check requests";
+        		document.getElementById("viewrequests").onclick=function(){viewrequests()};
         		document.getElementById("btn3").innerHTML="Renter/Button 3";
         		document.getElementById("btn4").innerHTML="Renter/Button 4";
         	}
@@ -51,6 +52,7 @@
         		document.getElementById("searchhouse").onclick=function(){searchhouse()};
         		document.getElementById("viewrequests").id="approvedrequests";
         		document.getElementById("approvedrequests").innerHTML="Approved Requests";
+        		document.getElementById("approvedrequests").onclick=function(){approvedrequests()};
         		document.getElementById("btn3").innerHTML="Rentee/Button 3";
         		document.getElementById("btn4").innerHTML="Rentee/Button 4";
         	}
@@ -61,7 +63,12 @@
         	function searchhouse(){
         		document.getElementById("page").data="searchhouse.jsp";
         	}
-        	
+        	function viewrequests(){
+        		document.getElementById("page").data="viewrequests.jsp";
+        	}
+        	function approvedrequests(){
+        		document.getElementById("page").data="approvedrequests.jsp";
+        	}
         	
         </script>
 </head>
@@ -97,7 +104,7 @@
          			out.print(dashname);%></span></a><hr>
                 </div class="btn-group-vertical"> 
                   <button style="width:100%" class="btn btn-primary btn-lg" id="addhouse" onclick=addhouse()>Add a house</button>
-                  <button style="width:100%" class="btn btn-primary btn-lg" id="viewrequests">View Requests</button>
+                  <button style="width:100%" class="btn btn-primary btn-lg" id="viewrequests" onclick=viewrequests()>View Requests</button>
                   <button style="width:100%" class="btn btn-primary btn-lg" id="btn3">Update Data</button>
                   <button style="width:100%" class="btn btn-primary btn-lg" id="btn4">Button 4</button></center>
             </div>

@@ -46,6 +46,7 @@ body {
 </style>
 </head>
 <body>
+
 <div class="split left">
   <div class="centered">
     
@@ -80,19 +81,22 @@ body {
 </div>
 
 <div class="split right">
+<h3><u>Houses for :</u></h3>
   <div class="centered">
-    <div class="vertical-menu" style="width:300px; height:400px;">
-				
+    <div class="vertical-menu" id="myDIV">
     <%
     try{
+    	String country=request.getParameter("country");
+    	String state=request.getParameter("state");
+    	String city=request.getParameter("city");
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
 			Statement st=con.createStatement();
-        	ResultSet rs=st.executeQuery("select * from roomdata");
+        	ResultSet rs=st.executeQuery("select * from roomdata where country='"+country+"' and state='"+state+"' and city='"+city+"'");
         
         while(rs.next())
         {%>	
-			<div class="card border-secondary mb-3" style="max-width: 28rem;background-color:grey;"><form action="requestprocess.jsp">
+			<div class="card border-secondary mb-3" style="max-width:28rem;background-color:grey;"><form action="requestprocess.jsp">
 			  <div class="card-header">Located in <u><%=rs.getString(4)%></u></div>
 			    <h5 class="card-title">It's a <%=rs.getString(7)%></h5>
 			    <p class="card-text">Negotiate upto:<%=rs.getInt(8)%></p>
@@ -113,6 +117,7 @@ body {
         %>
         </div>
   </div>
-</div>     
+</div>
+     
 </body>
 </html> 

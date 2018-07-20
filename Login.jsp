@@ -7,7 +7,7 @@
 	    String email=request.getParameter("email");
  		String password=request.getParameter("password");
  		HttpSession sess=request.getSession();
- 		sess.setAttribute("email",email);
+ 		session.setAttribute("email",email);
  		int i=0;
  		
  		try{
@@ -23,7 +23,9 @@
             else{
             	out.println("invalid data");
             }
-          
- 		}catch(Exception e){}
+          con.close();
+ 		}catch(Exception e){
+ 			out.print(e);
+ 		}
 	%>
 		
